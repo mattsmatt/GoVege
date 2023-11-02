@@ -1,0 +1,659 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB5904F3-AFCB-4A4D-841B-BC16D7765684}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GoVege</RootNamespace>
+    <AssemblyName>GoVege</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44329</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="App_Data\GoVegeDB.mdf" />
+    <Content Include="App_Data\GoVegeDB_log.ldf">
+      <DependentUpon>GoVegeDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Assets\056bee43243634a85925a6dad3d28f6baf4b7820.png" />
+    <Content Include="Assets\0f21a8c55ca7efd833d5e6d88143c7c837e0a583.png" />
+    <Content Include="Assets\1f40328cd2eea5e0b387b5b378cf99a2a6a78262.png" />
+    <Content Include="Assets\2f4a6d0295f37b265a4c4500fd1cce2f0a812bca.png" />
+    <Content Include="Assets\2f5deb86ee20ce55c30b297146bc4f601aa9a1fd.png" />
+    <Content Include="Assets\370dc63b6917d44a8b24f605d1c164b671252526.png" />
+    <Content Include="Assets\41fcdeac70520f3cad0d9eee86fee4e8a2040bae.png" />
+    <Content Include="Assets\578e89880fa7da1ed672576e00f971d3b66246a6.png" />
+    <Content Include="Assets\64cbe9f7d219e33c01fd0623801d7f25f81bda5e.png" />
+    <Content Include="Assets\7add20e3e89ffe4a1c0adb100bd56c1b90ffc5a3.png" />
+    <Content Include="Assets\7cd3d8fba1ed179b22ac348fba16072dce85589d.png" />
+    <Content Include="Assets\804eff1baf34500405b6a29b6098ecb0eeddbca2.png" />
+    <Content Include="Assets\86a9603dbd338c3ed0e3a07acd8ed319b6e2bfc8.png" />
+    <Content Include="Assets\89d41587e97c40559e045c175b29619c4724aba4.png" />
+    <Content Include="Assets\8bea6d2ed41b0e88a04aaf9e9122085c0cebca6a.png" />
+    <Content Include="Assets\92a313bb47347fb0349367bb54b456b7ea6f25ed.png" />
+    <Content Include="Assets\9480d0272df04c0bb15a662d700b14529fef57a8.png" />
+    <Content Include="Assets\a1398acde8113225482f94672093a54d51e4a88f.png" />
+    <Content Include="Assets\AboutUs\Fast.png" />
+    <Content Include="Assets\AboutUs\Quality.png" />
+    <Content Include="Assets\AboutUs\Sustainable.png" />
+    <Content Include="Assets\b7694d564f62b4ce7c62f40029610bc9919d2975.png" />
+    <Content Include="Assets\ContactUs\email.png" />
+    <Content Include="Assets\ContactUs\Phone.png" />
+    <Content Include="Assets\ContactUs\Vector.png" />
+    <Content Include="Assets\d057e1679fa937cc86fcebab9177fdcd9cc8804f.png" />
+    <Content Include="Assets\d1dc2c6c14b0b78c26cd07ca5aecb442df75d37e.png" />
+    <Content Include="Assets\d42a6995c567c4fea48bcf5644b4cbcedf1bc3bf.png" />
+    <Content Include="Assets\df4a9d353b707189f8ec0f165eadcfb711c363d5.png" />
+    <Content Include="Assets\Driver\bjork.jpg" />
+    <Content Include="Assets\Driver\jimmy.png" />
+    <Content Include="Assets\Driver\kdot.jpg" />
+    <Content Include="Assets\Driver\links.txt" />
+    <Content Include="Assets\Driver\megamind.jpg" />
+    <Content Include="Assets\Driver\tupac.png" />
+    <Content Include="Assets\emailIcon.png" />
+    <Content Include="Assets\f0eac2e810d17fc9ea0a1f82deb691beb7f5bb35.png" />
+    <Content Include="Assets\facebookIcon.png" />
+    <Content Include="Assets\FAQ\Question.png" />
+    <Content Include="Assets\FAQ\Vegetables.png" />
+    <Content Include="Assets\feaae4bea0e6b2cac8e9ee7359d9b508d33c0527.png" />
+    <Content Include="Assets\gadoGadoImage.png" />
+    <Content Include="Assets\gpsLocation.png" />
+    <Content Include="Assets\hermes-rivera-Ww8eQWjMJWk-unsplash.jpg" />
+    <Content Include="Assets\instagramIcon.png" />
+    <Content Include="Assets\koftaFlatbreads.jpg" />
+    <Content Include="Assets\louis-hansel-MlPD-AzZYMg-unsplash.jpg" />
+    <Content Include="Assets\MapSunib.png" />
+    <Content Include="Assets\pottedPlant.png" />
+    <Content Include="Assets\Product\bibimbap.jpg" />
+    <Content Include="Assets\Product\bread.png" />
+    <Content Include="Assets\Product\breakfast.jpg" />
+    <Content Include="Assets\Product\brownies.jpg" />
+    <Content Include="Assets\Product\burger.png" />
+    <Content Include="Assets\Product\caesar.jpg" />
+    <Content Include="Assets\Product\cheesecake %282%29.jpg" />
+    <Content Include="Assets\Product\cheesecake.jpg" />
+    <Content Include="Assets\Product\cobb.jpg" />
+    <Content Include="Assets\Product\coffee.png" />
+    <Content Include="Assets\Product\croissant.jpg" />
+    <Content Include="Assets\Product\curry.png" />
+    <Content Include="Assets\Product\daal.jpg" />
+    <Content Include="Assets\Product\falafels.png" />
+    <Content Include="Assets\Product\gadogado.png" />
+    <Content Include="Assets\Product\jollofrice.jpg" />
+    <Content Include="Assets\Product\kangkung.png" />
+    <Content Include="Assets\Product\links - vegetarian.txt" />
+    <Content Include="Assets\Product\links- vegan.txt" />
+    <Content Include="Assets\Product\mapotofu.jpg" />
+    <Content Include="Assets\Product\mash.jpg" />
+    <Content Include="Assets\Product\mushrooms.jpg" />
+    <Content Include="Assets\Product\nasigoreng.jpg" />
+    <Content Include="Assets\Product\nasilemak.jpg" />
+    <Content Include="Assets\Product\noodles.jpg" />
+    <Content Include="Assets\Product\orangejuice.jpg" />
+    <Content Include="Assets\Product\paneer.jpg" />
+    <Content Include="Assets\Product\pasta.jpg" />
+    <Content Include="Assets\Product\pecel.png" />
+    <Content Include="Assets\Product\pie.jpg" />
+    <Content Include="Assets\Product\pizza.jpg" />
+    <Content Include="Assets\Product\quiche.jpg" />
+    <Content Include="Assets\Product\ramen.jpg" />
+    <Content Include="Assets\Product\ratatouille.jpg" />
+    <Content Include="Assets\Product\rendang.jpg" />
+    <Content Include="Assets\Product\rujak.png" />
+    <Content Include="Assets\Product\sayurasem.jpe" />
+    <Content Include="Assets\Product\shishkabob.png" />
+    <Content Include="Assets\Product\soto.png" />
+    <Content Include="Assets\Product\sushi.jpg" />
+    <Content Include="Assets\Product\tacos.jpg" />
+    <Content Include="Assets\Product\tahu.jpe" />
+    <Content Include="Assets\Product\tempe.jpg" />
+    <Content Include="Assets\sales.jpg" />
+    <Content Include="Assets\sales50.png" />
+    <Content Include="Assets\twitterIcon.png" />
+    <Content Include="Assets\User\dalecooper.jpg" />
+    <Content Include="Assets\User\kanye.jpg" />
+    <Content Include="Assets\User\links.txt" />
+    <Content Include="Assets\User\ongo gablogian.png" />
+    <Content Include="Assets\User\scorsese.jpg" />
+    <Content Include="Assets\User\shockedguy.png" />
+    <Content Include="Assets\veganLoMeinMeinMeinMein.png" />
+    <Content Include="Assets\VendorCategory\bibimbap.jpg" />
+    <Content Include="Assets\VendorCategory\bread.png" />
+    <Content Include="Assets\VendorCategory\breakfast.jpg" />
+    <Content Include="Assets\VendorCategory\brownies.jpg" />
+    <Content Include="Assets\VendorCategory\burger.png" />
+    <Content Include="Assets\VendorCategory\caesar.jpg" />
+    <Content Include="Assets\VendorCategory\cheesecake %282%29.jpg" />
+    <Content Include="Assets\VendorCategory\cheesecake.jpg" />
+    <Content Include="Assets\VendorCategory\cobb.jpg" />
+    <Content Include="Assets\VendorCategory\coffee.png" />
+    <Content Include="Assets\VendorCategory\croissant.jpg" />
+    <Content Include="Assets\VendorCategory\curry.png" />
+    <Content Include="Assets\VendorCategory\daal.jpg" />
+    <Content Include="Assets\VendorCategory\falafels.png" />
+    <Content Include="Assets\VendorCategory\gadogado.png" />
+    <Content Include="Assets\VendorCategory\jollofrice.jpg" />
+    <Content Include="Assets\VendorCategory\kangkung.png" />
+    <Content Include="Assets\VendorCategory\links - vegetarian.txt" />
+    <Content Include="Assets\VendorCategory\links- vegan.txt" />
+    <Content Include="Assets\VendorCategory\mapotofu.jpg" />
+    <Content Include="Assets\VendorCategory\mash.jpg" />
+    <Content Include="Assets\VendorCategory\mushrooms.jpg" />
+    <Content Include="Assets\VendorCategory\nasigoreng.jpg" />
+    <Content Include="Assets\VendorCategory\nasilemak.jpg" />
+    <Content Include="Assets\VendorCategory\noodles.jpg" />
+    <Content Include="Assets\VendorCategory\orangejuice.jpg" />
+    <Content Include="Assets\VendorCategory\paneer.jpg" />
+    <Content Include="Assets\VendorCategory\pasta.jpg" />
+    <Content Include="Assets\VendorCategory\pecel.png" />
+    <Content Include="Assets\VendorCategory\pie.jpg" />
+    <Content Include="Assets\VendorCategory\pizza.jpg" />
+    <Content Include="Assets\VendorCategory\quiche.jpg" />
+    <Content Include="Assets\VendorCategory\ramen.jpg" />
+    <Content Include="Assets\VendorCategory\ratatouille.jpg" />
+    <Content Include="Assets\VendorCategory\rendang.jpg" />
+    <Content Include="Assets\VendorCategory\rujak.png" />
+    <Content Include="Assets\VendorCategory\sayurasem.jpe" />
+    <Content Include="Assets\VendorCategory\shishkabob.png" />
+    <Content Include="Assets\VendorCategory\soto.png" />
+    <Content Include="Assets\VendorCategory\sushi.jpg" />
+    <Content Include="Assets\VendorCategory\tacos.jpg" />
+    <Content Include="Assets\VendorCategory\tahu.jpe" />
+    <Content Include="Assets\VendorCategory\tempe.jpg" />
+    <Content Include="Assets\Vendor\bibimbap.jpg" />
+    <Content Include="Assets\Vendor\bread.png" />
+    <Content Include="Assets\Vendor\breakfast.jpg" />
+    <Content Include="Assets\Vendor\brownies.jpg" />
+    <Content Include="Assets\Vendor\burger.png" />
+    <Content Include="Assets\Vendor\caesar.jpg" />
+    <Content Include="Assets\Vendor\cheesecake %282%29.jpg" />
+    <Content Include="Assets\Vendor\cheesecake.jpg" />
+    <Content Include="Assets\Vendor\cobb.jpg" />
+    <Content Include="Assets\Vendor\coffee.png" />
+    <Content Include="Assets\Vendor\croissant.jpg" />
+    <Content Include="Assets\Vendor\curry.png" />
+    <Content Include="Assets\Vendor\daal.jpg" />
+    <Content Include="Assets\Vendor\falafels.png" />
+    <Content Include="Assets\Vendor\gadogado.png" />
+    <Content Include="Assets\Vendor\jollofrice.jpg" />
+    <Content Include="Assets\Vendor\kangkung.png" />
+    <Content Include="Assets\Vendor\links - vegetarian.txt" />
+    <Content Include="Assets\Vendor\links- vegan.txt" />
+    <Content Include="Assets\Vendor\mapotofu.jpg" />
+    <Content Include="Assets\Vendor\mash.jpg" />
+    <Content Include="Assets\Vendor\mushrooms.jpg" />
+    <Content Include="Assets\Vendor\nasigoreng.jpg" />
+    <Content Include="Assets\Vendor\nasilemak.jpg" />
+    <Content Include="Assets\Vendor\noodles.jpg" />
+    <Content Include="Assets\Vendor\orangejuice.jpg" />
+    <Content Include="Assets\Vendor\paneer.jpg" />
+    <Content Include="Assets\Vendor\pasta.jpg" />
+    <Content Include="Assets\Vendor\pecel.png" />
+    <Content Include="Assets\Vendor\pie.jpg" />
+    <Content Include="Assets\Vendor\pizza.jpg" />
+    <Content Include="Assets\Vendor\quiche.jpg" />
+    <Content Include="Assets\Vendor\ramen.jpg" />
+    <Content Include="Assets\Vendor\ratatouille.jpg" />
+    <Content Include="Assets\Vendor\rendang.jpg" />
+    <Content Include="Assets\Vendor\rujak.png" />
+    <Content Include="Assets\Vendor\sayurasem.jpe" />
+    <Content Include="Assets\Vendor\shishkabob.png" />
+    <Content Include="Assets\Vendor\soto.png" />
+    <Content Include="Assets\Vendor\sushi.jpg" />
+    <Content Include="Assets\Vendor\tacos.jpg" />
+    <Content Include="Assets\Vendor\tahu.jpe" />
+    <Content Include="Assets\Vendor\tempe.jpg" />
+    <Content Include="Assets\Voucher\links.txt" />
+    <Content Include="Assets\Voucher\voucher-1.png" />
+    <Content Include="Assets\Voucher\voucher-2.png" />
+    <Content Include="Assets\Voucher\voucher-3.png" />
+    <Content Include="Assets\Voucher\voucher-4.png" />
+    <Content Include="Assets\Voucher\voucher-5.png" />
+    <Content Include="Model\GoVegeDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GoVegeDBModel.edmx</DependentUpon>
+      <LastGenOutput>GoVegeDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\GoVegeDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GoVegeDBModel.edmx</DependentUpon>
+      <LastGenOutput>GoVegeDBModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SQL\CreateTables.sql" />
+    <Content Include="SQL\DropTables.sql" />
+    <Content Include="SQL\InsertTables.sql" />
+    <Content Include="View\AboutUsPage.aspx" />
+    <Content Include="View\AdminDriverPage.aspx" />
+    <Content Include="View\AdminUpdateDriverPage.aspx" />
+    <Content Include="View\AdminInsertvendorPage.aspx" />
+    <Content Include="View\AdminInsertVoucherPage.aspx" />
+    <Content Include="View\AdminUpdateVendorPage.aspx" />
+    <Content Include="View\AdminUpdateVoucherPage.aspx" />
+    <Content Include="View\AdminVoucherPage.aspx" />
+    <Content Include="View\CartPage.aspx" />
+    <Content Include="View\ContactUsPage.aspx" />
+    <Content Include="View\CustomerInfoPage.aspx" />
+    <Content Include="View\DeleteProductPage.aspx" />
+    <Content Include="View\DriverInfoPage.aspx" />
+    <Content Include="View\FAQPage.aspx" />
+    <Content Include="View\HomePage.aspx" />
+    <Content Include="View\InsertDriverPage.aspx" />
+    <Content Include="View\InsertProductPage.aspx" />
+    <Content Include="View\LoginPage.aspx" />
+    <Content Include="View\MasterPage.Master" />
+    <Content Include="View\MerchantInfoPage.aspx" />
+    <Content Include="View\OrderTrackingPage.aspx" />
+    <Content Include="View\PromotionPage.aspx" />
+    <Content Include="View\RegisterPage.aspx" />
+    <Content Include="View\StorePage.aspx" />
+    <Content Include="View\UpdateDriverPage.aspx" />
+    <Content Include="View\UpdateProductPage.aspx" />
+    <Content Include="View\UpdateProfilePage.aspx" />
+    <Content Include="View\AdminVendorPage.aspx" />
+    <Content Include="View\VendorDetailsPage.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\CartController.cs" />
+    <Compile Include="Controller\DriverController.cs" />
+    <Compile Include="Controller\ProductController.cs" />
+    <Compile Include="Controller\PromotionController.cs" />
+    <Compile Include="Controller\VoucherController.cs" />
+    <Compile Include="Factory\VoucherFactory.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
+    <Compile Include="Factory\DriverFactory.cs" />
+    <Compile Include="Factory\ProductFactory.cs" />
+    <Compile Include="Factory\TransactionFactory.cs" />
+    <Compile Include="Handler\CartHandler.cs" />
+    <Compile Include="Controller\registerPageController.cs" />
+    <Compile Include="Controller\VendorController.cs" />
+    <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Factory\VendorFactory.cs" />
+    <Compile Include="Handler\customerHandler.cs" />
+    <Compile Include="Handler\DriverHandler.cs" />
+    <Compile Include="Handler\ProductHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
+    <Compile Include="Handler\VendorHandler.cs" />
+    <Compile Include="Model\GoVegeDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoVegeDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GoVegeDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GoVegeDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoVegeDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsCart.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsDriver.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsProduct.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsTransaction.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsTransactionDetail.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsUser.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsVendor.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsVendorCategory.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MsVoucher.cs">
+      <DependentUpon>GoVegeDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CartRepository.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\DatabaseSingleton.cs" />
+    <Compile Include="Repository\DriverRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\PromotionRepository.cs" />
+    <Compile Include="Repository\TransactionRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Repository\VendorRepository.cs" />
+    <Compile Include="Repository\VoucherRepository.cs" />
+    <Compile Include="View\AboutUsPage.aspx.cs">
+      <DependentUpon>AboutUsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AboutUsPage.aspx.designer.cs">
+      <DependentUpon>AboutUsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminDriverPage.aspx.cs">
+      <DependentUpon>AdminDriverPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminDriverPage.aspx.designer.cs">
+      <DependentUpon>AdminDriverPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminUpdateDriverPage.aspx.cs">
+      <DependentUpon>AdminUpdateDriverPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminUpdateDriverPage.aspx.designer.cs">
+      <DependentUpon>AdminUpdateDriverPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminInsertvendorPage.aspx.cs">
+      <DependentUpon>AdminInsertvendorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminInsertvendorPage.aspx.designer.cs">
+      <DependentUpon>AdminInsertvendorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminInsertVoucherPage.aspx.cs">
+      <DependentUpon>AdminInsertVoucherPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminInsertVoucherPage.aspx.designer.cs">
+      <DependentUpon>AdminInsertVoucherPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminUpdateVendorPage.aspx.cs">
+      <DependentUpon>AdminUpdateVendorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminUpdateVendorPage.aspx.designer.cs">
+      <DependentUpon>AdminUpdateVendorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminUpdateVoucherPage.aspx.cs">
+      <DependentUpon>AdminUpdateVoucherPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminUpdateVoucherPage.aspx.designer.cs">
+      <DependentUpon>AdminUpdateVoucherPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminVoucherPage.aspx.cs">
+      <DependentUpon>AdminVoucherPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminVoucherPage.aspx.designer.cs">
+      <DependentUpon>AdminVoucherPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContactUsPage.aspx.cs">
+      <DependentUpon>ContactUsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ContactUsPage.aspx.designer.cs">
+      <DependentUpon>ContactUsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerInfoPage.aspx.cs">
+      <DependentUpon>CustomerInfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\CustomerInfoPage.aspx.designer.cs">
+      <DependentUpon>CustomerInfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeleteProductPage.aspx.cs">
+      <DependentUpon>DeleteProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DeleteProductPage.aspx.designer.cs">
+      <DependentUpon>DeleteProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DriverInfoPage.aspx.cs">
+      <DependentUpon>DriverInfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DriverInfoPage.aspx.designer.cs">
+      <DependentUpon>DriverInfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\FAQPage.aspx.cs">
+      <DependentUpon>FAQPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\FAQPage.aspx.designer.cs">
+      <DependentUpon>FAQPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertDriverPage.aspx.cs">
+      <DependentUpon>InsertDriverPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertDriverPage.aspx.designer.cs">
+      <DependentUpon>InsertDriverPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertProductPage.aspx.cs">
+      <DependentUpon>InsertProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertProductPage.aspx.designer.cs">
+      <DependentUpon>InsertProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\MerchantInfoPage.aspx.cs">
+      <DependentUpon>MerchantInfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MerchantInfoPage.aspx.designer.cs">
+      <DependentUpon>MerchantInfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderTrackingPage.aspx.cs">
+      <DependentUpon>OrderTrackingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\OrderTrackingPage.aspx.designer.cs">
+      <DependentUpon>OrderTrackingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PromotionPage.aspx.cs">
+      <DependentUpon>PromotionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PromotionPage.aspx.designer.cs">
+      <DependentUpon>PromotionPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StorePage.aspx.cs">
+      <DependentUpon>StorePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StorePage.aspx.designer.cs">
+      <DependentUpon>StorePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateDriverPage.aspx.cs">
+      <DependentUpon>UpdateDriverPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateDriverPage.aspx.designer.cs">
+      <DependentUpon>UpdateDriverPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateProductPage.aspx.cs">
+      <DependentUpon>UpdateProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateProductPage.aspx.designer.cs">
+      <DependentUpon>UpdateProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateProfilePage.aspx.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateProfilePage.aspx.designer.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminVendorPage.aspx.cs">
+      <DependentUpon>AdminVendorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AdminVendorPage.aspx.designer.cs">
+      <DependentUpon>AdminVendorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\VendorDetailsPage.aspx.cs">
+      <DependentUpon>VendorDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\VendorDetailsPage.aspx.designer.cs">
+      <DependentUpon>VendorDetailsPage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\GoVegeDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GoVegeDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\GoVegeDBModel.edmx.diagram">
+      <DependentUpon>GoVegeDBModel.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58148</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44329/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

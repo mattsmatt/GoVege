@@ -1,0 +1,170 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="GoVege.View.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        .informationText{
+            font-size:17px;
+            color:black;
+            cursor:pointer;
+            padding:2px;
+        }
+        .informationText:hover{
+            color:white;
+            background-color:black;
+            border-radius:3px;
+        }
+        footer{
+            margin:30px 32px 0px 32px;
+            padding-bottom:10px;
+            background-color:white;
+        }
+        .socialImage{
+           width:50px;
+        }
+        #footerContainer{
+            display:flex;
+            justify-content: space-between;
+        }
+        *{
+            margin:0;
+            text-decoration:none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .button{
+            border:none;
+            background:none;
+            padding: 4px 8px;
+            color: white;
+            background:#30D315;
+            justify-content:space-between;
+            border-radius:3px;
+            margin:2px;
+        }
+        .button:hover{
+            border:2px solid #30D315;
+            color:#30D315;
+            background-color:white;
+            border-radius:3px;
+            margin:0;
+            cursor:pointer;
+        }
+        #headerContainer{
+            padding: 2vh 4vw;
+            display:flex;
+            justify-content:space-between;
+            vertical-align:middle;
+        }
+        header{
+            z-index: 1;
+            width: 100%;
+            position: absolute;
+            background-color: rgba(0,0,0,0.5);
+        }
+        #imageContainer{
+            display:inline;
+        }
+        #textLogoContainer{
+            display:block;
+        }
+        #textLogo1{
+            display:inline;
+            color:white;
+        }
+        #textLogo2{
+            display:inline;
+            color:#30D315;
+        }
+        #headerLogo{
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+        }
+        #headerNav{
+            display:flex;
+            align-items:center;
+        }
+        .headerButton{
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div id="headerContainer">
+                <a href="./HomePage.aspx">
+                <div id="headerLogo">
+                    <div class="imageContainer">
+                        <asp:Image ID="imageLogo" runat="server" ImageUrl="~/Assets/pottedPlant.png"/>
+                    </div>
+                    <div id="textLogoContainer">
+                        <p id="textLogo1"><i>Go</i></p>
+                        <p id="textLogo2"><i>Vege</i></p>
+                    </div>
+                </div>
+                </a>
+                <div id="headerNav">
+                    <div id="NavGuest" class="headerButton" runat="server">
+                        <asp:Button CssClass="button" ID="BtnLogin" runat="server" Text="Login" OnClick="BtnLogin_Click" />
+                        <asp:Button CssClass="button" ID="BtnRegister" runat="server" Text="Register" OnClick="BtnRegister_Click" />
+                    </div>
+
+                    <div id="NavCustomer" class="headerButton" runat="server">
+                        <asp:Button CssClass="button" ID="BtnCart" runat="server" Text="Cart" OnClick="BtnCart_Click" />
+                        <asp:Button CssClass="button" ID="BtnLogout" runat="server" Text="Logout" OnClick="BtnLogout_Click" />
+                        <asp:Button CssClass="button" ID="BtnProfile" runat="server" OnClick="BtnProfile_Click" />
+                    </div>
+                    <div id="NavAdmin" class="headerButton" runat="server">
+                        <asp:Button CssClass="button" ID="BtnAdminVendor" runat="server" Text="Vendor" OnClick="BtnAdminVendor_Click" />
+                        <asp:Button CssClass="button" ID="BtnAdminDriver" runat="server" Text="Driver" OnClick="BtnAdminDriver_Click" />
+                        <asp:Button CssClass="button" ID="BtnAdminVoucher" runat="server" Text="Voucher" OnClick="BtnAdminVoucher_Click" />
+                        <asp:Button CssClass="button" ID="BtnLogout2" runat="server" Text="Logout" OnClick="BtnLogout_Click2" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <hr style="margin-bottom:10px"/>
+            <div id="footerContainer">
+                <div class="footerItem">
+                    <div class="imageContainer">
+                        <asp:Image class="socialImage" runat="server" ImageUrl="~/Assets/pottedPlant.png"/>
+                    </div>
+                </div>
+                <div class="footerItem" style="
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;">
+                    <h4>OUR SOCIALS</h4>
+                    <div class="socialImageContainer">
+                        <a href="https://instagram.com/" target="_blank"><asp:Image CssClass="socialImage" runat="server" ImageUrl="~/Assets/instagramIcon.png"/></a>
+                        <a href="https://facebook.com/" target="_blank"><asp:Image CssClass="socialImage" runat="server" ImageUrl="~/Assets/facebookIcon.png"/></a>
+                        <a href="https://twitter.com/" target="_blank"><asp:Image CssClass="socialImage" runat="server" ImageUrl="~/Assets/twitterIcon.png"/></a>
+                        <a href="https://gmail.com/" target="_blank"><asp:Image CssClass="socialImage" runat="server" ImageUrl="~/Assets/emailIcon.png"/></a>
+                    </div>
+                </div>
+                <div class="footerItem">
+                    <h4>MORE INFORMATION</h4>
+                    <a href="AboutUsPage.aspx" target="_blank"><p class="informationText">About Us</p></a>
+                    <a href="ContactUsPage.aspx" target="_blank"><p class="informationText">Contact Us</p></a>
+                    <a href="FAQPage.aspx" target="_blank"><p class="informationText">Help</p></a>
+                </div>
+            </div>
+            <br />
+            <p style="font-size:15px">© 2023 GoVege, Inc. All Rights Reserved</p>
+        </footer>
+        
+    </form>
+</body>
+</html>
